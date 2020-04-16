@@ -7,6 +7,7 @@ function addToJournal(){
     value = document.getElementById('value').value;
     valueOperation = document.getElementById('operation2').value;
     value2 = document.getElementById('value2').value;
+    
     if (!(letter === "") && !(value === "")){
         if (letterOperation == "+" && !(letter2==="")){
             intValue = parseInt(value, 10);
@@ -43,4 +44,11 @@ function getCode(){
     document.getElementById('codeResult').innerText = result
 }
 
-//
+function hideElements(){
+    if (document.getElementById('operation1').value == '='){
+        document.getElementById('letter2Label').style.display = 'none';
+    }
+    else{
+        document.getElementById('letter2Label').style.display = 'block';
+    }
+}

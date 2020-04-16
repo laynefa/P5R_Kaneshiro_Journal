@@ -5,37 +5,73 @@
             Kaneshiro's Journal Calculator
         </title>
     </head>
+    <style>
+        label {
+            display: block;
+        }
+
+        label {
+            margin-bottom: 20px;
+        }
+        /*body {
+            background-image: url('images/p5.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }*/
+    </style>
     <body>
-        <script type="text/javascript" src="journal.js"></script>
-        <form id="journalUpdate" onsubmit="addToJournal();return false">
-            <label for="letter">Letter1:</label>
-            <input type="text" id="letter" name="letter"><br><br>
-
-            <label for="operation1">Operation:</label>
-            <input type="text" id="operation1" name="operation1"><br><br>
-
-            <label for="letter2">Letter2:</label>
-            <input type="text" id="letter2" name="letter2"><br><br>
-
-            <label for="value">Value:</label>
-            <input type="text" id="value" name="value"><br><br>
-
-            <label for="operation2">Operation2:</label>
-            <input type="text" id="operation2" name="operation2"><br><br>
-
-            <label for="value2">Value2:</label>
-            <input type="text" id="value2" name="value2"><br><br>
-            <input type="submit" value="Update">
-          </form>
+        <h1>
+            <p style="text-align: center;">Kaneshiro Journal Calculator</p>
+        </h1>
+        <label for="letter">
+            Letter 1:
+            <input type="text" id="letter" name="letter">
+        </label>
         
-          <p>Retreive Code</p>
-          <form id="generateCode" onsubmit="getCode();return false">
-            <label for="code">Code:</label>
-            <input type="text" id="code" name="code"><br><br>
-            <input type="submit" value="Retreive">
-          </form>
+        <label for="operation1">
+            Operation:
+            <select id="operation1" onchange=hideElements()>
+                <option value="=">=</option>
+                <option value="+">+</option>
+            </select>
+        </label>    
+        
+        <label id="letter2Label" for="letter2" style="display: none;">
+            Letter2:
+            <input type="text" id="letter2">
+        </label>
 
-          <p>Result Code</p>
-          <p id=codeResult></p>
+        <label id="valueLabel" for="value">
+            Value:
+            <input type="text" id="value">
+        </label>
+
+        <label id="operation2Label" for="operation2">
+            Operation 2:
+            <select id="operation2">
+                <option value=""></option>
+                <option value="=">=</option>
+                <option value="+">+</option>
+            </select>
+        </label>
+        
+        <label id="value2Label" for="value2" style="display: none;">
+            Value2:
+            <input type="text" id="value2">
+        </label>
+
+        <button type="submit" onclick="addToJournal()">Update</button>
+        
+        <p>Retreive Code</p>
+        <label for="code">
+            Code:
+            <input type="text" id="code" name="code">
+            <button type="submit" onclick="getCode()">Retreive</button>
+        </label>
+        </form>
+
+        <p>Result Code</p>
+        <p id=codeResult></p>
+        <script type="text/javascript" src="journal.js"></script>
     </body>
 </html>

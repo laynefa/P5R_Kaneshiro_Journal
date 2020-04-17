@@ -19,7 +19,7 @@
             background-size: cover;
         }*/
     </style>
-    <body>
+    <body style="text-align: center;">
         <h1>
             <p style="text-align: center;">Kaneshiro Journal Calculator</p>
         </h1>
@@ -48,10 +48,9 @@
 
         <label id="operation2Label" for="operation2">
             Operation 2:
-            <select id="operation2">
+            <select id="operation2" onchange="hideOp2Elements()">
                 <option value=""></option>
-                <option value="=">=</option>
-                <option value="+">+</option>
+                <option id="operation2Plus" value="+">+</option>
             </select>
         </label>
         
